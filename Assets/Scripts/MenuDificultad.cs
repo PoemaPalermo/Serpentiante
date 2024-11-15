@@ -56,4 +56,8 @@ public class MenuDificultad : MonoBehaviour
     {
         panel.SetActive(true);
     }
+    public void Dificultad(string escena)
+    {
+        GameManager.Instance.Dificultad(escena);
+    }
 }

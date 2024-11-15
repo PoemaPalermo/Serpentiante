@@ -68,10 +68,12 @@ public class Game : MonoBehaviour
         if (collision.tag == "Food")
         {
             Grow();
+            Debug.Log("Deboraste");
         }
         else if(collision.tag == "Obstacle")
         {
             Die();
+            Debug.Log("Died");
         }
 
     }
