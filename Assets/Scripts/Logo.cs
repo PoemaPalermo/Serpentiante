@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuMager : MonoBehaviour
+public class Logo : MonoBehaviour
 {
-    public void CambiarDeEscena(string escena)
+    private void OnMouseDown()
     {
-        SceneManager.LoadScene(escena);
+        SceneManager.LoadScene("Menu");
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Snake : MonoBehaviour
+public class Game : MonoBehaviour
 {
     Vector2 direction;
     private List<Transform> tramos;
