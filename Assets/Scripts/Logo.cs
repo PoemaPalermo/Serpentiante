@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Logo : MonoBehaviour
 {
-    private void OnMouseDown()
+    public void MandarMenu()
     {
         SceneManager.LoadScene("Menu");
     }
