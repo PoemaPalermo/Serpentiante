@@ -5,21 +5,14 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public Collider2D spawnArea;
-    int cantidadDeComida;
+    int puntos;
     
     void Start()
     {
         SpawnComida();
+        puntos = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (cantidadDeComida == 0)
-        {
-            SpawnComida();
-        }
-    }
     private void RandomizePosition()
     {
         Bounds bounds = this.spawnArea.bounds;
@@ -30,8 +23,7 @@ public class Food : MonoBehaviour
         this.transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0f);
     }
     private void SpawnComida()
-    {
-        cantidadDeComida = 1;
+    {        
         RandomizePosition();
     }
 
@@ -40,7 +32,8 @@ public class Food : MonoBehaviour
         if(collision.tag == "Player")
         {
             SpawnComida();
-        }
-        
+            puntos += 1;
+            Debug.Log("Tenes " + puntos + " puntos");
+        }        
     }
 }
