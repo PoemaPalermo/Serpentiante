@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    //puntos
-    public int[] mejorPuntajeEasy;
-    public int[] mejorPuntajeNormal;
-    public int[] mejorPuntajeHard;
+     //Guardado de datos
+    public ExampleData data;
+    public const string pathData ="DataTest";
+    public const string nameFileData ="TestingExample";
 
     //dificultad
     bool elegidaDificultad;
@@ -16,10 +16,18 @@ public class GameManager : MonoBehaviour
     private float gameFixedTimestepHard = 0.08f;
     private float gameFixedTimestepNormal = 0.2f;
     private float gameFixedTimestepEasy = 0.4f;
-    public void Dificultad(string dificulty)
+    void Start()
     {
-        dificultad = dificulty;
-        SceneManager.LoadScene("Game");
+        var dataFound = SaveLoadSystemData.LoadData<ExampleData>(pathData, nameFileData);
+        if (dataFound != null)
+        {
+            data = dataFound;
+        }
+        else
+        {
+            data = new ExampleData();            
+        }
+
     }
     private void Update()
     {
@@ -51,6 +59,35 @@ public class GameManager : MonoBehaviour
             elegidaDificultad = false;
         }
     }
+    public void Dificultad(string dificulty)
+    {
+        dificultad = dificulty;
+        SceneManager.LoadScene("Game");
+    }
+    public void GuardarPuntaje(int puntaje)
+    {
+        if (dificultad == "e")
+        {
+            data.mejoresPuntajeEasy.Add(puntaje);
+            data.mejoresPuntajeEasy.Sort((a, b) => b.CompareTo(a));
+        }
+        else if (dificultad == "n")
+        {
+            data.mejoresPuntajeNormal.Add(puntaje);
+            data.mejoresPuntajeNormal.Sort((a, b) => b.CompareTo(a));
+        }
+        else if(dificultad == "h")
+        {
+            data.mejoresPuntajeHard.Add(puntaje);
+            data.mejoresPuntajeHard.Sort((a, b) => b.CompareTo(a));
+        }
+        SaveData();
+    }
+    public void SaveData()
+    {
+        SaveLoadSystemData.SaveData(data, pathData, nameFileData);
+    }
+    //Singleton
     public static GameManager Instance;
     private void Awake()
     {

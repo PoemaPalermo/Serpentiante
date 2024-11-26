@@ -8,6 +8,7 @@ public class Game : MonoBehaviour
     Vector2 direction;
     private List<Transform> tramos;
     public Transform prefabSegmento;
+    int puntos;
     private void Start()
     {
         direction = Vector2.right;
@@ -50,6 +51,9 @@ public class Game : MonoBehaviour
         segmento.position = tramos[tramos.Count - 1].position;
 
         tramos.Add(segmento);
+
+        puntos += 1;
+        Debug.Log("Tenes " + puntos + " puntos");
     }
     private void Die()
     {
@@ -72,6 +76,7 @@ public class Game : MonoBehaviour
         }
         else if(collision.tag == "Obstacle")
         {
+            GameManager.Instance.GuardarPuntaje(puntos);
             Die();
             Debug.Log("Died");
         }

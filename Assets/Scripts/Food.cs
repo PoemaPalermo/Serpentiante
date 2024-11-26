@@ -5,12 +5,10 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public Collider2D spawnArea;
-    int puntos;
     
     void Start()
     {
         SpawnComida();
-        puntos = 0;
     }
 
     private void RandomizePosition()
@@ -31,9 +29,7 @@ public class Food : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            SpawnComida();
-            puntos += 1;
-            Debug.Log("Tenes " + puntos + " puntos");
+            SpawnComida();            
         }        
     }
 }
