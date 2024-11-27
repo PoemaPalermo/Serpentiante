@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 29250082}
   - component: {fileID: 29250081}
   - component: {fileID: 29250083}
+  - component: {fileID: 29250084}
   m_Layer: 0
   m_Name: DiedManager
   m_TagString: Untagged
@@ -168,6 +169,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e64c8d1852a6c748aac26267a9de86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &29250084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29250080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc03699c06872c468a7af94216eb3b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtMejorPuntaje: {fileID: 1506374895}
+  txtUltimoPuntaje: {fileID: 49646153}
+  data:
+    mejoresPuntajeEasy: 
+    mejoresPuntajeNormal: 
+    mejoresPuntajeHard: 
 --- !u!1 &49646151
 GameObject:
   m_ObjectHideFlags: 0

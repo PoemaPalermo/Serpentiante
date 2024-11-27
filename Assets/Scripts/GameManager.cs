@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public ExampleData data;
     public const string pathData = "DataTest";
     public const string nameFileData = "TestingExample";
+    public int puntos;
 
     //dificultad
     bool elegidaDificultad;
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
     }
     public void GuardarPuntaje(int puntaje)
     {
+        puntos = puntaje;
         if (dificultad == "e")
         {
             data.mejoresPuntajeEasy.Add(puntaje);
