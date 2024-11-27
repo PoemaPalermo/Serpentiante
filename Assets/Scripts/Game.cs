@@ -19,19 +19,19 @@ public class Game : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) && direction!= Vector2.right)
+        if (Input.GetKey(KeyCode.LeftArrow) && direction != Vector2.right || Input.GetKey(KeyCode.A) && direction!= Vector2.right)
         {
             direction = Vector2.left; 
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) && direction != Vector2.left)
+        else if (Input.GetKey(KeyCode.RightArrow) && direction != Vector2.left || Input.GetKey(KeyCode.D) && direction != Vector2.left)
         { 
             direction = Vector2.right;
         }
-        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) && direction != Vector2.down)
+        else if (Input.GetKey(KeyCode.UpArrow) && direction != Vector2.down || Input.GetKey(KeyCode.W) && direction != Vector2.down)
         {
             direction = Vector2.up;
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) && direction != Vector2.up)
+        else if (Input.GetKey(KeyCode.DownArrow) && direction != Vector2.up || Input.GetKey(KeyCode.S) && direction != Vector2.up)
         {
             direction = Vector2.down;
         }
