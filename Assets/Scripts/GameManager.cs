@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public const string pathData = "DataTest";
     public const string nameFileData = "TestingExample";
     public int puntos;
+    public int tamañoMaxListas = 5;
 
     //dificultad
     bool elegidaDificultad;
@@ -37,17 +38,14 @@ public class GameManager : MonoBehaviour
             if (dificultad == "e")
             {
                 Time.fixedDeltaTime = gameFixedTimestepEasy;
-                Debug.Log("Fixed Timestep cambiado a: " + gameFixedTimestepEasy);
             }
             else if (dificultad == "n")
             {
                 Time.fixedDeltaTime = gameFixedTimestepNormal;
-                Debug.Log("Fixed Timestep cambiado a: " + gameFixedTimestepNormal);
             }
             else if (dificultad == "h")
             {
                 Time.fixedDeltaTime = gameFixedTimestepHard;
-                Debug.Log("Fixed Timestep cambiado a: " + gameFixedTimestepHard);
             }
             else
             {
@@ -73,16 +71,28 @@ public class GameManager : MonoBehaviour
         {
             data.mejoresPuntajeEasy.Add(puntaje);
             data.mejoresPuntajeEasy.Sort((a, b) => b.CompareTo(a));
+            if (data.mejoresPuntajeEasy.Count > tamañoMaxListas)
+            {
+                data.mejoresPuntajeEasy = data.mejoresPuntajeEasy.GetRange(0, tamañoMaxListas);
+            }
         }
         else if (dificultad == "n")
         {
             data.mejoresPuntajeNormal.Add(puntaje);
             data.mejoresPuntajeNormal.Sort((a, b) => b.CompareTo(a));
+            if (data.mejoresPuntajeNormal.Count > tamañoMaxListas)
+            {
+                data.mejoresPuntajeNormal = data.mejoresPuntajeNormal.GetRange(0, tamañoMaxListas);
+            }
         }
         else if (dificultad == "h")
         {
             data.mejoresPuntajeHard.Add(puntaje);
             data.mejoresPuntajeHard.Sort((a, b) => b.CompareTo(a));
+            if (data.mejoresPuntajeHard.Count > tamañoMaxListas)
+            {
+                data.mejoresPuntajeHard = data.mejoresPuntajeHard.GetRange(0, tamañoMaxListas);
+            }
         }
         SaveData();
     }
