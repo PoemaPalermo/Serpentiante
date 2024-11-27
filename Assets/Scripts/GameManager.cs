@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-     //Guardado de datos
+    //Guardado de datos
     public ExampleData data;
-    public const string pathData ="DataTest";
-    public const string nameFileData ="TestingExample";
+    public const string pathData = "DataTest";
+    public const string nameFileData = "TestingExample";
 
     //dificultad
     bool elegidaDificultad;
@@ -25,13 +25,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            data = new ExampleData();            
+            data = new ExampleData();
         }
 
     }
     private void Update()
     {
-        if(SceneManager.GetActiveScene().name == "Game"&& !elegidaDificultad)
+        if (SceneManager.GetActiveScene().name == "Game" && !elegidaDificultad)
         {
             if (dificultad == "e")
             {
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
                 Time.fixedDeltaTime = gameFixedTimestepNormal;
                 Debug.Log("Fixed Timestep cambiado a: " + gameFixedTimestepNormal);
             }
-            else if(dificultad == "h")
+            else if (dificultad == "h")
             {
                 Time.fixedDeltaTime = gameFixedTimestepHard;
                 Debug.Log("Fixed Timestep cambiado a: " + gameFixedTimestepHard);
@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
             elegidaDificultad = false;
         }
     }
+
     public void Dificultad(string dificulty)
     {
         dificultad = dificulty;
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
             data.mejoresPuntajeNormal.Add(puntaje);
             data.mejoresPuntajeNormal.Sort((a, b) => b.CompareTo(a));
         }
-        else if(dificultad == "h")
+        else if (dificultad == "h")
         {
             data.mejoresPuntajeHard.Add(puntaje);
             data.mejoresPuntajeHard.Sort((a, b) => b.CompareTo(a));

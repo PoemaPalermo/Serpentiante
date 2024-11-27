@@ -1121,9 +1121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b628d6b3703ee6648b5d26fcababd42d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mejorPuntajeEasy: 
-  mejorPuntajeNormal: 
-  mejorPuntajeHard: 
+  data:
+    mejoresPuntajeEasy: 
+    mejoresPuntajeNormal: 
+    mejoresPuntajeHard: 
   dificultad: 
 --- !u!4 &1068927226
 Transform:

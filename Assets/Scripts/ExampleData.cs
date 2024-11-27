@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExampleData : MonoBehaviour
+[System.Serializable]
+public class ExampleData
 {
-    public List<int> mejoresPuntajeEasy;
-    public List<int> mejoresPuntajeNormal;
-    public List<int> mejoresPuntajeHard;
+    public List<int> mejoresPuntajeEasy = new List<int>();
+    public List<int> mejoresPuntajeNormal = new List<int>();
+    public List<int> mejoresPuntajeHard = new List<int>();
 }
