@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
             }
             elegidaDificultad = true;
         }
-        else if (SceneManager.GetActiveScene().name == "Menu")
+        else if (SceneManager.GetActiveScene().name != "Game"|| SceneManager.GetActiveScene().name != "Died")
         {
             elegidaDificultad = false;
         }

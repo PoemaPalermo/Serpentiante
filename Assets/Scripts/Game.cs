@@ -35,6 +35,7 @@ public class Game : MonoBehaviour
         {
             direction = Vector2.down;
         }
+        GameManager.Instance.puntos = puntos;
     }
     private void FixedUpdate()
     {
