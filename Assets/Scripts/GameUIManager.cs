@@ -54,7 +54,11 @@ public class GameUIManager : MonoBehaviour
             {
                 txtAvisoMejorPuntaje.text = "SOS EL NUEVO MEJOR PUNTAJE";
                 PasarAUI(txtTMejorPuntaje, " ", txtMejorPuntaje, " ",0);
-            }            
+            }
+            else if(txtAvisoMejorPuntaje.text != "")
+            {
+                txtAvisoMejorPuntaje.text = "";
+            }
         }
         else if (GameManager.Instance.dificultad == "n")
         {
@@ -68,6 +72,10 @@ public class GameUIManager : MonoBehaviour
                 txtAvisoMejorPuntaje.text = "SOS EL NUEVO MEJOR PUNTAJE";
                 PasarAUI(txtTMejorPuntaje, " ", txtMejorPuntaje, " ", 0);
             }
+            else if (txtAvisoMejorPuntaje.text != "")
+            {
+                txtAvisoMejorPuntaje.text = "";
+            }
         }
         else if (GameManager.Instance.dificultad == "h")
         {
@@ -80,6 +88,10 @@ public class GameUIManager : MonoBehaviour
             {
                 txtAvisoMejorPuntaje.text = "SOS EL NUEVO MEJOR PUNTAJE";
                 PasarAUI(txtTMejorPuntaje, " ", txtMejorPuntaje, " ", 0);
+            }
+            else if (txtAvisoMejorPuntaje.text != "")
+            {
+                txtAvisoMejorPuntaje.text = "";
             }
         }
         
