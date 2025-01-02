@@ -1067,8 +1067,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -310.91, y: -88}
-  m_SizeDelta: {x: 635.3949, y: 115.392334}
+  m_AnchoredPosition: {x: -310.4597, y: -88}
+  m_SizeDelta: {x: 990.5438, y: 115.392334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402652760
 MonoBehaviour:
@@ -1098,7 +1098,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Titulo
@@ -1873,6 +1873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabSegmento: {fileID: 7263708771792634297, guid: 0f72e73ecdd76e349b3579089fe19e30,
     type: 3}
+  puntos: 0
 --- !u!1 &2135665721
 GameObject:
   m_ObjectHideFlags: 0

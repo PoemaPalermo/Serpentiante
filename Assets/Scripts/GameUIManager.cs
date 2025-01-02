@@ -42,7 +42,47 @@ public class GameUIManager : MonoBehaviour
         {
             txtPuntajeActual.text = GameManager.Instance.puntos.ToString();
             ultimoPunto = GameManager.Instance.puntos;
-        }        
+        } 
+        if (GameManager.Instance.dificultad == "e")
+        {
+            if(GameManager.Instance.data.mejoresPuntajeEasy[4] <= GameManager.Instance.puntos)
+            {
+                txtAvisoMejorPuntaje.text = "Estás en el top 5";
+                PasarAUI(txtTMejorPuntaje, " ", txtMejorPuntaje, " ",0);
+            }
+            else if(GameManager.Instance.data.mejoresPuntajeEasy[0] < GameManager.Instance.puntos)
+            {
+                txtAvisoMejorPuntaje.text = "SOS EL NUEVO MEJOR PUNTAJE";
+                PasarAUI(txtTMejorPuntaje, " ", txtMejorPuntaje, " ",0);
+            }            
+        }
+        else if (GameManager.Instance.dificultad == "n")
+        {
+            if (GameManager.Instance.data.mejoresPuntajeNormal[4] <= GameManager.Instance.puntos)
+            {
+                txtAvisoMejorPuntaje.text = "Estás en el top 5";
+                PasarAUI(txtTMejorPuntaje, " ", txtMejorPuntaje, " ", 0);
+            }
+            else if (GameManager.Instance.data.mejoresPuntajeNormal[0] < GameManager.Instance.puntos)
+            {
+                txtAvisoMejorPuntaje.text = "SOS EL NUEVO MEJOR PUNTAJE";
+                PasarAUI(txtTMejorPuntaje, " ", txtMejorPuntaje, " ", 0);
+            }
+        }
+        else if (GameManager.Instance.dificultad == "h")
+        {
+            if (GameManager.Instance.data.mejoresPuntajeHard[4] <= GameManager.Instance.puntos)
+            {
+                txtAvisoMejorPuntaje.text = "Estás en el top 5";
+                PasarAUI(txtTMejorPuntaje, " ", txtMejorPuntaje, " ", 0);
+            }
+            else if (GameManager.Instance.data.mejoresPuntajeHard[0] < GameManager.Instance.puntos)
+            {
+                txtAvisoMejorPuntaje.text = "SOS EL NUEVO MEJOR PUNTAJE";
+                PasarAUI(txtTMejorPuntaje, " ", txtMejorPuntaje, " ", 0);
+            }
+        }
+        
     }
 
     public void PasarAUI(Text txtTitulo, string strTitulo, Text txtValor, string strValor, int intValor)

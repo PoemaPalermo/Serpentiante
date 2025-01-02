@@ -8,7 +8,7 @@ public class Game : MonoBehaviour
     Vector2 direction;
     private List<Transform> tramos;
     public Transform prefabSegmento;
-    int puntos;
+    public int puntos;
     private void Start()
     {
         direction = Vector2.right;
@@ -75,7 +75,7 @@ public class Game : MonoBehaviour
             Grow();
             Debug.Log("Deboraste");
         }
-        else if(collision.tag == "Obstacle")
+        else if (collision.tag == "Obstacle")
         {
             GameManager.Instance.GuardarPuntaje(puntos);
             Die();
